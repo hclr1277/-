@@ -1,0 +1,27 @@
+---
+layout: default 
+---
+<div class="container" id="container">
+    <div id="main" role="main">
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <article class="content">
+            {{ content }}
+        </article>
+    <span class="container flip">
+    <a {% if page.next %} href="{{ site.baseurl }}{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >上一篇:{{page.next.title }}</a>
+    <a {% if page.previous %} href="{{ site.baseurl }}{{ page.previous.url }}" class="pageNav pageNavRight"{% endif %} {% unless page.previous %} class="pageNavInvalid pageNavInvalidRight" {% endunless %} >下一篇:{{ page.previous.title }}</a>
+</span>
+    </div>
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+</div>
+<script>
+var cloudTieConfig = {
+    url: document.location.href,
+    sourceId: "",
+    productKey: "2c84cb00d4bc4014b86827dbac9ff918",
+    target: "cloud-tie-wrapper"
+};
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
